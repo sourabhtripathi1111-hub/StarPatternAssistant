@@ -32,10 +32,12 @@ class MainActivity: FlutterActivity() {
                 }
                 "startLiveAssistant" -> {
                     liveRunning = true
+                    startService(Intent(this, OverlayService::class.java))
                     result.success(mapOf("ok" to true, "message" to "Live assistant base started. Overlay/screen-capture service next module me active hoga.", "data" to mapOf<String, Any>()))
                 }
                 "stopLiveAssistant" -> {
                     liveRunning = false
+                    stopService(Intent(this, OverlayService::class.java))
                     result.success(mapOf("ok" to true, "message" to "Live assistant stopped.", "data" to mapOf<String, Any>()))
                 }
                 "captureOnce" -> {
