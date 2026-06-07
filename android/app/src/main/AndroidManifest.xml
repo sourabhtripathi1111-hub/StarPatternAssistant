@@ -13,5 +13,16 @@
             </intent-filter>
         </activity>
         <meta-data android:name="flutterEmbedding" android:value="2" />
+        <service
+    android:name=".OverlayService"
+    android:enabled="true"
+    android:exported="false"
+    android:foregroundServiceType="mediaProjection" />
+
+<service
+    android:name=".ScreenCaptureService"
+    android:enabled="true"
+    android:exported="false"
+    android:foregroundServiceType="mediaProjection" />
     </application>
 </manifest>
